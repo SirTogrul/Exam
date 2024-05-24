@@ -1,0 +1,36 @@
+﻿@using Revas.Models
+@model List<Portfolio>
+
+  <div class="container">
+      <a class="btn btn-primary"asp-action="Create">
+          Create
+      </a>
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ImageUrl</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.ImgUrl</td>
+                <td>
+                    <div style="width:100px">
+                        <img style="width:100%" src="~/Upload/Portfolio/@item.ImgUrl" />
+                     
+                    </div>
+                </td>
+                <td>
+                    <a class="btn btn-warning"asp-action="Uptade" asp-controller="Portfolio" asp-route-id="@item.Id">Uptade</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Portfolio" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+
+            }
+    </tbody>
+</table>
+  </div>
+   

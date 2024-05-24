@@ -1,0 +1,9 @@
+﻿@using Revas.Models
+@model Portfolio
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3 col-9 mb-3">
+        <label asp-for="Photofile" class="form-label">ImageUrl</label>
+        <input asp-for="Photofile" type="file" id="formFile">
+        <span asp-validation-for="Photofile">ImageUrl</span>
+        <input asp type="submit" value="Submit" />
+</form>
